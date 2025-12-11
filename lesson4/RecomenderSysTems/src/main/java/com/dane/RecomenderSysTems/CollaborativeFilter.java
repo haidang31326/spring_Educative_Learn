@@ -1,6 +1,11 @@
 package com.dane.RecomenderSysTems;
 
-public class CollaborativeFilter implements Filter {
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Component;
+
+@Component
+@Primary
+public class CollaborativeFilter implements filter {
 
     public String[] getRecommendations(String movie) {
         //logic

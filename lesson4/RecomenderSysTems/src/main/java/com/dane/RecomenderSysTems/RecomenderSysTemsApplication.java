@@ -2,6 +2,7 @@ package com.dane.RecomenderSysTems;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 
 import java.util.Arrays;
 
@@ -9,9 +10,11 @@ import java.util.Arrays;
 public class RecomenderSysTemsApplication {
 
 	public static void main(String[] args) {
-        RecommenderImplementation app = new RecommenderImplementation(new ContentBasedFilter());
+        ApplicationContext applicationCT = SpringApplication.run(RecomenderSysTemsApplication.class, args);
 
-        String[] result = app.recommendMovies("Finding Dory");
+        RecommenderImplementation recommender = applicationCT.getBean(RecommenderImplementation.class);
+
+        String[] result = recommender.recommendMovies("dane TEa");
 
         System.out.println(Arrays.toString(result));
 	}

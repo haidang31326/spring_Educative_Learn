@@ -1,5 +1,7 @@
 package com.dane.RecomenderSysTems;
 
-public interface Filter {
+
+
+public interface filter {
     String[] getRecommendations(String movie);
 }
